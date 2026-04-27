@@ -24,10 +24,10 @@ acs-tex/
 │       ├── IEEEtran.bst             # IEEE bibliography style
 │       ├── IEEEtranS.bst            # IEEE bibliography style (sorted variant)
 │       └── listings/
-│           └── c/                   # C code listing styles and examples
-│               ├── style.sty        # Custom listings style for C code
-│               ├── list01.c         # Spectre PoC code examples
-│               └── ...              # (list02.c through list06.c)
+│           ├── c/
+│           │   └── style.sty        # Custom listings style for C code
+│           ├── list01.c             # Spectre PoC code examples
+│           └── ...                  # (list02.c through list06.c)
 ├── CONTRIBUTING.md
 ├── LICENSE
 └── README.md
@@ -105,7 +105,7 @@ conventions, branching strategy, and code review standards.
 - **Language**: the primary language is Brazilian Portuguese (`\selectlanguage{brazil}`); English
   is loaded as a secondary language via `babel`.
 - **Encoding**: source files use UTF-8 (`\usepackage[utf8]{inputenc}`).
-- **Code listings**: C code samples live under `listings/c/` and use the custom style loaded with
+- **Code listings**: C code samples live under `listings/` and use the custom style loaded with
   `\usepackage{listings/c/style}`. New code examples should follow the same pattern.
 - **Section structure**: Introduction → Methodology → Results/Discussion → Conclusion →
   References (standard IEEE paper layout).
@@ -116,10 +116,10 @@ conventions, branching strategy, and code review standards.
 
 ### Add a new code listing
 
-1. Place the `.c` file in `listings/c/`.
+1. Place the `.c` file in `listings/`.
 2. Reference it in `document.tex` using:
    ```latex
-   \lstinputlisting[caption={Caption text}, label={lst:labelname}]{listings/c/filenamehere.c}
+   \lstinputlisting[language=C, style=c, caption={Caption text}, label={lst:labelname}]{listings/filenamehere.c}
    ```
 
 ### Add a new bibliography entry
