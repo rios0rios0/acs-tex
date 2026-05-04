@@ -15,7 +15,9 @@ template.
 ```
 acs-tex/
 ├── .github/
-│   └── copilot-instructions.md      # This file
+│   ├── copilot-instructions.md      # This file
+│   └── workflows/
+│       └── release.yaml             # Auto-tag on merge to main
 ├── Execução Especulativa - Limites da Exploração de Informações Sensíveis/
 │   └── article/
 │       ├── document.tex             # Main LaTeX source file
@@ -28,6 +30,8 @@ acs-tex/
 │           │   └── style.sty        # Custom listings style for C code
 │           ├── list01.c             # Spectre PoC code examples
 │           └── ...                  # (list02.c through list06.c)
+├── .gitignore
+├── CHANGELOG.md
 ├── CONTRIBUTING.md
 ├── LICENSE
 └── README.md
@@ -83,8 +87,10 @@ pdflatex document.tex
 
 ## CI/CD Pipeline
 
-There is no CI/CD pipeline configured for this repository. Validation is done manually by
-inspecting the generated `document.pdf`.
+A reusable release workflow (`.github/workflows/release.yaml`) runs on every push to `main`. It
+delegates to `rios0rios0/pipelines` and automatically creates a Git tag when a version-bump PR is
+merged. There is no compile or test CI — validation is done manually by inspecting the generated
+`document.pdf`.
 
 ## Development Workflow
 
