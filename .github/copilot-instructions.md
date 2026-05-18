@@ -83,8 +83,9 @@ pdflatex document.tex
 
 ## CI/CD Pipeline
 
-There is no CI/CD pipeline configured for this repository. Validation is done manually by
-inspecting the generated `document.pdf`.
+The repository has a release workflow (`.github/workflows/release.yaml`) that runs on pushes to
+`main` and delegates to a shared pipeline (`rios0rios0/pipelines`). There is no LaTeX compilation
+or validation CI — correctness is verified manually by inspecting the generated `document.pdf`.
 
 ## Development Workflow
 
