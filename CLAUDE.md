@@ -30,7 +30,7 @@ The four-step cycle is required for correct bibliography and cross-references. A
 
 ## CI
 
-Release workflow (`.github/workflows/release.yaml`) runs on push to `main` and delegates to `rios0rios0/pipelines`. No LaTeX compilation in CI — correctness is verified manually.
+Release workflow (`.github/workflows/release.yaml`) runs on push to `main` and delegates to `rios0rios0/pipelines`. Two Claude workflows delegate to the same shared pipelines: `claude-review.yaml` reviews pull requests and `claude-mention.yaml` answers `@claude` mentions; both authenticate with the `CLAUDE_CODE_OAUTH_TOKEN` secret. No LaTeX compilation in CI — correctness is verified manually.
 
 ## Commit and branching
 

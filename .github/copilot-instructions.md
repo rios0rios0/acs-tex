@@ -84,8 +84,11 @@ pdflatex document.tex
 ## CI/CD Pipeline
 
 The repository has a release workflow (`.github/workflows/release.yaml`) that runs on pushes to
-`main` and delegates to a shared pipeline (`rios0rios0/pipelines`). There is no LaTeX compilation
-or validation CI — correctness is verified manually by inspecting the generated `document.pdf`.
+`main` and delegates to a shared pipeline (`rios0rios0/pipelines`). Two Claude workflows delegate
+to the same shared pipelines — `claude-review.yaml` reviews pull requests and
+`claude-mention.yaml` answers `@claude` mentions, both using the `CLAUDE_CODE_OAUTH_TOKEN` secret.
+There is no LaTeX compilation or validation CI — correctness is verified manually by inspecting the
+generated `document.pdf`.
 
 ## Development Workflow
 
