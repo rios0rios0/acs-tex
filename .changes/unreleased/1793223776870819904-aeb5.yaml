@@ -1,0 +1,3 @@
+kind: 'Changed'
+body: 'refreshed `.github/skills/code-review/SKILL.md`, `.github/copilot-instructions.md`, and `CONTRIBUTING.md` to point at `AGENTS.md` instead of `CLAUDE.md`, list the paper''s actual section order, show the `.changes/`, workflow, and agent files in the repository tree, replace review guidance about tests and layering with LaTeX-specific checks, and fix the Git Flow guide link'
+time: '2026-10-28T21:42:56.870741893Z'

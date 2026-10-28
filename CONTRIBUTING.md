@@ -35,5 +35,5 @@ development practices, refer to the **[Development Guide](https://github.com/rio
    pdflatex document.tex
    ```
 7. Review the generated `document.pdf` for correctness
-8. Commit following the [commit conventions](https://github.com/rios0rios0/guide/wiki/Life-Cycle/Git-Flow)
+8. Commit following the [commit conventions](https://github.com/rios0rios0/guide/wiki/Git-Flow)
 9. Open a pull request against `main`
