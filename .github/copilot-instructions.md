@@ -14,8 +14,12 @@ template.
 
 ```
 acs-tex/
+├── .changes/
+│   └── unreleased/                  # chlog fragments; CHANGELOG.md is generated from them
 ├── .github/
-│   └── copilot-instructions.md      # This file
+│   ├── copilot-instructions.md      # This file
+│   ├── skills/code-review/SKILL.md  # Pull-request review skill
+│   └── workflows/                   # release, checks, claude-review, claude-mention
 ├── Execução Especulativa - Limites da Exploração de Informações Sensíveis/
 │   └── article/
 │       ├── document.tex             # Main LaTeX source file
@@ -28,6 +32,9 @@ acs-tex/
 │           │   └── style.sty        # Custom listings style for C code
 │           ├── list01.c             # Spectre PoC code examples
 │           └── ...                  # (list02.c through list06.c)
+├── AGENTS.md                        # Instructions shared by every coding agent
+├── CHANGELOG.md                     # Generated — never edited by hand
+├── CLAUDE.md                        # Single line: @AGENTS.md
 ├── CONTRIBUTING.md
 ├── LICENSE
 └── README.md
@@ -100,7 +107,7 @@ generated `document.pdf`.
 3. Edit `document.tex` (or other LaTeX source files) in your preferred editor.
 4. Run the full compilation cycle (see above) to produce `document.pdf`.
 5. Review `document.pdf` for correctness (layout, references, code listings).
-6. Commit following the [commit conventions](https://github.com/rios0rios0/guide/wiki/Life-Cycle/Git-Flow).
+6. Commit following the [commit conventions](https://github.com/rios0rios0/guide/wiki/Git-Flow).
 7. Open a pull request against `main`.
 
 Refer to the [Development Guide](https://github.com/rios0rios0/guide/wiki) for commit message
@@ -114,8 +121,9 @@ conventions, branching strategy, and code review standards.
 - **Encoding**: source files use UTF-8 (`\usepackage[utf8]{inputenc}`).
 - **Code listings**: C code samples live under `listings/` and use the custom style loaded with
   `\usepackage{listings/c/style}`. New code examples should follow the same pattern.
-- **Section structure**: Introduction → Methodology → Results/Discussion → Conclusion →
-  References (standard IEEE paper layout).
+- **Section structure**: the example paper runs Introdução → Fundamentação Teórica → Trabalhos
+  Relacionados → Metodologia → Experimentos → Resultados → Conclusão, then Agradecimentos, the
+  bibliography (`\bibliography{references}`), and an appendix with the full code listings.
 - **Citations**: use `\cite{}` for in-text citations and maintain `references.bib` in BibTeX
   format.
 
