@@ -22,6 +22,13 @@ Exceptions are acceptable depending on the circumstances (critical bug fixes tha
 
 ## [Unreleased]
 
+## [0.5.2] - 2026-11-04
+
+### Changed
+
+- moved the agent instructions from `CLAUDE.md` to `AGENTS.md`, keeping a `CLAUDE.md` that imports it
+- refreshed `.github/skills/code-review/SKILL.md`, `.github/copilot-instructions.md`, and `CONTRIBUTING.md` to point at `AGENTS.md` instead of `CLAUDE.md`, list the paper's actual section order, show the `.changes/`, workflow, and agent files in the repository tree, replace review guidance about tests and layering with LaTeX-specific checks, and fix the Git Flow guide link
+
 ## [0.5.1] - 2026-09-08
 
 ### Changed
